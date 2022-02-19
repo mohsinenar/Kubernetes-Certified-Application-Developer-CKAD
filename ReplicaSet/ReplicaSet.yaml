@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: wordpress-replicaset
+  labels:
+    name: wordpressreplicaset
+spec:
+  template:
+    metadata:
+      name: wordpress-pdo
+      labels:
+        name: wordpress
+    spec:
+      containers:
+        - name: wordpress
+          image: wordpress
+  selector:
+    matchLabels:
+      name: wordpress
+  replicas: 2
+
