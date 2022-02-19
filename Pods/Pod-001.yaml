@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: wordpress # must be unique
+  labels:
+    app: cms-wordpress
+spec:
+  containers:
+    - name: wordpress
+      image: wordpress

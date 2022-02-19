@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: wordpress-replication-controller
+  labels:
+    name: wordpress-replication
+spec:
+    template:
+      metadata:
+        name: wordpress-pod
+        labels:
+          version: v5
+      spec:
+        containers:
+          - name: wordpress
+            image: wordpress
+    replicas: 3
